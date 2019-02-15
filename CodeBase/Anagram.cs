@@ -7,14 +7,14 @@ namespace CodeBase
     class Anagram
     {
         // Variables defined to capture true or false if a character match found
-        bool[] isfoundChar;
-        private bool isPvtAnagram = false;
-        public bool isAnagram(String Word1, String Word2)
+        bool[] IsfoundChar;
+        private bool IsPvtAnagram = false;
+        public bool IsAnagram(String Word1, String Word2)
         {
             //Converting to uppercase to make it case insensitive
             Word1 = Word1.ToUpper();
             Word2 = Word2.ToUpper();
-            isfoundChar = new bool[Word1.Length];
+            IsfoundChar = new bool[Word1.Length];
             //comparing the length to see if it is an anagram
             if (Word1.Length == Word2.Length)
             {
@@ -27,26 +27,26 @@ namespace CodeBase
                      
                         if (Word1[i] == Word2[j])
                         {
-                            isfoundChar[i] = true;
+                            IsfoundChar[i] = true;
                             break;
                         }
                         else
                         {
-                            isfoundChar[i] = false;
+                            IsfoundChar[i] = false;
                            }
                     }
 
-                    if (!isfoundChar[i])
+                    if (!IsfoundChar[i])
                         return false;
                 }
                 //checking the boolean array if it contains false
                 for (int i = 0; i < Word1.Length; i++)
                 {
-                    if (!isfoundChar[i])
+                    if (!IsfoundChar[i])
                     {
-                        isPvtAnagram = false;
+                        IsPvtAnagram = false;
                     }
-                    isPvtAnagram = true;
+                    IsPvtAnagram = true;
                 }
 
             }
@@ -54,7 +54,7 @@ namespace CodeBase
             {
                 return false;
             }
-            return isPvtAnagram;
+            return IsPvtAnagram;
         }
         
     }
